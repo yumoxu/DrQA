@@ -41,7 +41,7 @@ def rank(args):
             doc_names, doc_scores = ranker.closest_docs(query=doc, args.k)
 
             dump_json = {
-                'doc_id': doc_id
+                'doc_id': doc_id,
                 'rank_ids': doc_names,
                 'rank_scores': doc_scores,
             }
@@ -67,4 +67,3 @@ if __name__ == '__main__':
     args = parser.parse_args()
     rank(args)
     # python scripts/retriever/build_rank.py --k 50 --model /home/s1617290/DrQA/cnndm/train-tfidf-ngram=2-hash=16777216-tokenizer=corenlp.npz --data_path /home/s1617290/DrQA/cnndm/train.json --out_dir /home/s1617290/DrQA/cnndm/ 
-    # py 
