@@ -38,7 +38,7 @@ def rank(args):
             input_json = json.loads(line.strip('\n'))
             doc_id, doc = input_json['id'], input_json['text']
 
-            doc_names, doc_scores = ranker.closest_docs(query=doc, args.k)
+            doc_names, doc_scores = ranker.closest_docs(query=doc, k=args.k)
 
             dump_json = {
                 'doc_id': doc_id,
