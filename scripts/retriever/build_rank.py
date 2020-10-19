@@ -61,8 +61,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, default=None)
     parser.add_argument('--k', type=int, default=10)
-    parser.add_argument('data_path', type=str, help='/path/to/data')
-    parser.add_argument('out_dir', type=str, help='/path/to/out_dir')
+    parser.add_argument('--data_path', type=str, help='/path/to/data')
+    parser.add_argument('--out_dir', type=str, help='/path/to/out_dir')
 
     args = parser.parse_args()
     rank(args)
