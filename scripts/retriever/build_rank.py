@@ -29,7 +29,7 @@ def rank(args):
     ranker = retriever.get_class('tfidf')(tfidf_path=args.model)
 
     basename = os.path.splitext(os.path.basename(args.data_path))[0]
-    dump_path = os.path.join(args.out_dir, basename)
+    dump_path = os.path.join(args.out_dir, f'{basename}-{args.k}.rank')
     logger.info(f'Dumping rank jsons to {dump_path}')
 
     with io.open(args.data_path) as json_file:
