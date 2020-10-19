@@ -9,6 +9,7 @@ import argparse
 import code
 import prettytable
 import logging
+import os
 from drqa import retriever
 
 
