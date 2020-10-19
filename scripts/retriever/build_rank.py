@@ -35,7 +35,7 @@ def rank(args):
 
     with io.open(args.data_path) as json_file:
         for idx, line in enumerate(json_file):
-            if idx % 1000 == 0:
+            if idx and idx % 1000 == 0:
                 logger.info(f'\t{idx} finished...')
 
             input_json = json.loads(line.strip('\n'))
@@ -45,8 +45,8 @@ def rank(args):
 
             dump_json = {
                 'doc_id': doc_id,
-                'rank_ids': doc_names,
-                'rank_scores': doc_scores,
+                'rank_ids': list(doc_names),
+                'rank_scores': list(doc_scores),
             }
             json_str = json.dumps(dump_json, ensure_ascii=False)
             with open(dump_path, 'a') as f:
