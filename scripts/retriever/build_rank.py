@@ -10,6 +10,7 @@ import code
 import prettytable
 import logging
 import os
+import io
 from drqa import retriever
 
 
